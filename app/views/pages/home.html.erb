@@ -1,9 +1,18 @@
-<div class= "hero-unit">
-	<h1> Ruby Fashion</h1>
-	<p>
-		Welcome to Ruby Fashion! Learn about the most stylish trends in clothing and shoes. Make friends and have fun! Follow  <%= link_to "You See Fashion!", "http://instagram.com/youseefashion" %> an Instagram account run by Ruby Fashion.
-	</p>
-	<p> 
-		<%= link_to "Sign Up Now!", "*", class: "btn btn-info btn large" %> 
-	</p>
-</div>
+<% if user_signed_in? %>
+ <div class= "hero-unit">
+ <h1>Ruby Fashion</h1>
+ 	<p>
+			Your logged into Ruby Fashion! Keep up to date with the best trends in fashion. Shoes, bags, dresses, necklaces and more! Make friends and have a good time. Follow  <%= link_to "You See Fashion!", "http://instagram.com/youseefashion" %> an Instagram account run by Ruby Fashion.
+		</p>
+<% else %>
+
+	<div class= "hero-unit">
+		<h1> Ruby Fashion</h1>
+		<p>
+			Welcome to Ruby Fashion! Learn about the most stylish trends in clothing and shoes. Make friends and have fun! Follow  <%= link_to "You See Fashion!", "http://instagram.com/youseefashion" %> an Instagram account run by Ruby Fashion.
+		</p>
+		<p> 
+			<%= link_to "Sign Up Now!", new_user_registration_path , class: "btn btn-info btn-large" %> 
+		</p>
+	</div>
+<% end %>
